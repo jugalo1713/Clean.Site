@@ -19,16 +19,21 @@ using Umbraco.Extensions;
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	// Mixin Content Type with alias "contentPage2"
-	/// <summary>Content Page</summary>
+	/// <summary>Content Properties</summary>
 	public partial interface IContentPage2 : IPublishedElement
 	{
 		/// <summary>Body Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText { get; }
+
+		/// <summary>Main content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent { get; }
 	}
 
-	/// <summary>Content Page</summary>
+	/// <summary>Content Properties</summary>
 	[PublishedModel("contentPage2")]
 	public partial class ContentPage2 : PublishedElementModel, IContentPage2
 	{
@@ -71,5 +76,18 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetBodyText(IContentPage2 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "bodyText");
+
+		///<summary>
+		/// Main content: Enter the main content rows for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainContent")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent => GetMainContent(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Main content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockListModel GetMainContent(IContentPage2 that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(publishedValueFallback, "mainContent");
 	}
 }
